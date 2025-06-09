@@ -1,0 +1,227 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(30, 30, 46, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  margin: 25px 0 15px;
+  font-size: 1.5rem;
+  color: #ddd;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 3px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="number"] {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 15px;
+  background-color: rgba(51, 51, 51, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.3);
+  background-color: rgba(51, 51, 51, 0.9);
+}
+
+button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#expense-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+#expense-list li {
+  background: rgba(51, 51, 51, 0.5);
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #6a11cb;
+}
+
+#expense-list li:hover {
+  background: rgba(51, 51, 51, 0.7);
+  transform: translateX(5px);
+}
+
+#expense-list li button {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  min-width: auto;
+  font-size: 0.9rem;
+}
+
+#expense-list li button:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+#total {
+  text-align: right;
+  padding: 15px;
+  background: rgba(51, 51, 51, 0.3);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#total h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+#total-amount {
+  font-weight: bold;
+  color: #4caf50;
+  font-size: 1.4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+/* Add these styles to your existing CSS */
+.edit-btn {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  min-width: auto;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  min-width: auto;
+  font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+#expense-form button[type="submit"] {
+  transition: all 0.3s ease;
+}
+
+/* No other changes needed to existing CSS */
